@@ -64508,7 +64508,7 @@ MonoBehaviour:
   playerResourcesText: {fileID: 2109967424}
   gameOverField: {fileID: 140543123}
   cursor: {fileID: 1628703083}
-  towerTemplate: {fileID: 177289955711521778, guid: 4f84e9de026684e9baf70b07ed889a75,
+  towerTemplate: {fileID: 8703588474496989251, guid: 4f84e9de026684e9baf70b07ed889a75,
     type: 3}
   health: 1000
   resources: 100
@@ -64687,7 +64687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427280581
 RectTransform:
   m_ObjectHideFlags: 0

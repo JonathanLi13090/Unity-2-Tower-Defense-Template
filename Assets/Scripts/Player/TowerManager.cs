@@ -18,7 +18,9 @@ public class TowerManager : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        spr = GetComponent<SpriteRenderer>();
+        //day 2 changed----------------------------------------------------------------------------
+        spr = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
         spr.color = self.color;
         spr.sprite = self.sprite;
         currentHealth = self.health;
@@ -30,7 +32,10 @@ public class TowerManager : MonoBehaviour
     {
         if (currentTarget != null)
         {
-            AttackTarget();
+            //AttackTarget();
+            //day 2 added------------------------------------------------------------------------------
+            float range = Vector3.Distance(transform.position, currentTarget.transform.position);
+            anim.SetFloat("rangeToTarget", range);
         }
         else
         {
@@ -72,6 +77,9 @@ public class TowerManager : MonoBehaviour
         {
             if (currentTarget != null)
             {
+                //day 2 added------------------------------------------------------------------------------
+                float range = Vector3.Distance(transform.position, currentTarget.transform.position);
+                anim.SetFloat("rangeToTarget", range);
                 anim.SetBool("hasTarget", true);
             }
             else
@@ -89,7 +97,7 @@ public class TowerManager : MonoBehaviour
         return rot;
     }
 
-    void AttackTarget()
+    public void AttackTarget()
     {
         Debug.DrawLine(this.transform.position, currentTarget.transform.position);
         if (readyToFire)
